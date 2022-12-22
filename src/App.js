@@ -7,8 +7,8 @@ import { Navbar } from "./myComponent/Navbar";
 import "./App.css";
 
 function short(str = "") {
-  if (str.length > 12) {
-    str = str.slice(0, 12) + "...";
+  if (str.length > 10) {
+    str = str.slice(0, 10) + "...";
   }
   return str;
 }
@@ -18,12 +18,13 @@ function App() {
     setData(data.filter((itm) => e.target.value !== itm.id));
   };
   const handelClick = () => {
-    axios
-      .post("http://localhost:5000/shuffelData", data)
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => console.log(err.data));
+    data.length !== 1 &&
+      axios
+        .post("http://localhost:5000/shuffelData", data)
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => console.log(err.data));
   };
   const [data, setData] = useState([]);
   const name = useRef("");
@@ -52,30 +53,35 @@ function App() {
                   >
                     x
                   </button>
-                  {short(itm.name).toUpperCase()}
+                  <div className="list_name_div">
+                    {short(itm.name).toUpperCase()}
+                  </div>
                 </li>
               );
             })}
           </ul>
         </div>
         <div className="input_container">
+          <h1 className="title_top">Secret Santa</h1>
           <form onSubmit={handelSubmit}>
-            <div>
+            <div className="input_name_div">
               <div>
                 <label>Name</label>
               </div>
               <input
+                className="input_field"
                 type="text"
                 placeholder="Enter your name"
                 ref={name}
                 required
               />
             </div>
-            <div>
+            <div className="input_email_div">
               <div>
                 <label>Email</label>
               </div>
               <input
+                className="input_field"
                 type="email"
                 placeholder="Enter your email"
                 ref={email}
@@ -83,8 +89,12 @@ function App() {
               />
             </div>
             <div>
-              <button type="submit">Submit</button>
-              <button type="reset">Reset</button>
+              <button className="btn" type="submit">
+                Submit
+              </button>
+              <button className="btn" type="reset">
+                Reset
+              </button>
             </div>
           </form>
         </div>

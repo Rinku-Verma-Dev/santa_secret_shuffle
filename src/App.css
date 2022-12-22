@@ -3,43 +3,79 @@
   align-items: center;
   justify-content: center;
 }
-.input_container {
+.player_list {
+  width: 20vw;
+  height: 93vh;
+  display: flex;
+  color: white;
+  align-items: center;
+  flex-direction: column;
+  background-color: #189ab4;
+}
+.participants_list {
+  font-size: large;
+  overflow-y: auto;
+  list-style-type: none;
+}
+.participants_list li {
+  width: 30vh;
+  display: flex;
+  padding: 0.5vh;
+  color: white;
+  margin-bottom: 1vh;
+  margin-right: 20px;
+  align-items: center;
+  border-radius: 40vh;
+  justify-content: center;
+  background-color: #0c6980;
+}
+.delete_p {
+  border: 0;
+  font-weight: 900;
+  border-radius: 25vw;
+  background-color: white;
+}
+.delete_p:hover {
+  color: white;
+  overflow: hidden;
+  border-radius: 25vw;
+  background-color: red;
+}
+.list_name_div {
+  width: 10vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #05e0e9;
-  width: 70vw;
-  height: 93vh;
 }
-.player_list {
+.input_container {
+  height: 93vh;
+  width: 80vw;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  align-items: center;
-  color: white;
-  background-color: #0c2d48;
-  width: 30vw;
-  height: 93vh;
+  background-color: #cfeed1;
 }
-.participants_list {
-  list-style-type: none;
-  font-size: x-large;
-  overflow-y: auto;
+.title_top {
+  font-size: 15vh;
+  color: #ff2768;
+  font-family: "Great Vibes", cursive;
 }
-.participants_list li {
-  background-color: white;
+.input_email_div,
+.input_name_div {
   margin-bottom: 1vh;
-  display: flex;
-  padding: 1vh;
-  align-items: center;
-  justify-content: space-evenly;
-  border-radius: 40vh;
-  width: 50vh;
-  color: black;
 }
-.delete_p {
-  font-weight: 900;
+.input_field {
+  padding-left: 1vh;
 }
-.delete_p:hover {
-  background-color: red;
-  color: white;
+.btn {
+  width: 13vh;
+}
+
+/* scroll bar */
+::-webkit-scrollbar {
+  width: 0.8vh;
+}
+::-webkit-scrollbar-thumb {
+  background: #b8ee30;
+  border-radius: 20vh;
 }

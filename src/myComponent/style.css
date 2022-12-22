@@ -9,8 +9,8 @@
   justify-content: space-around;
 }
 .shuffelBtn {
-  cursor: pointer;
   border: 0;
+  cursor: pointer;
   font-weight: 900;
   padding: 1vh 5vh;
 }
